@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Phân công nhóm 4 người — CloudKicks</title>
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; color: #23372f; font-family: Arial, Helvetica, sans-serif; font-size: 10.2pt; line-height: 1.48; background: #e9edeb; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { position: relative; width: 210mm; height: 297mm; margin: 0 auto 8mm; padding: 15mm 17mm 19mm; background: #fff; break-after: page; overflow: hidden; }
+.page:last-child { break-after: auto; }
+.page::before { position: absolute; content: ""; top: 0; left: 0; right: 0; height: 3mm; background: #194e43; }
+.running { display: flex; justify-content: space-between; align-items: center; color: #718078; font-size: 8pt; letter-spacing: .04em; border-bottom: 1px solid #e0e7e2; padding-bottom: 3mm; margin-bottom: 6mm; }
+.brand { font-weight: 800; color: #194e43; font-size: 10pt; letter-spacing: -.02em; }
+.footer { position: absolute; left: 17mm; right: 17mm; bottom: 9mm; border-top: 1px solid #e0e7e2; padding-top: 3mm; display: flex; justify-content: space-between; font-size: 8pt; color: #77847c; }
+.kicker { font-size: 8.5pt; font-weight: bold; letter-spacing: .1em; text-transform: uppercase; color: #497568; margin: 0 0 3mm; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 33pt; line-height: 1.14; letter-spacing: -.045em; color: #194e43; }
+h2 { font-size: 23pt; line-height: 1.2; letter-spacing: -.035em; color: #194e43; margin-bottom: 4mm; }
+h3 { font-size: 11.8pt; color: #194e43; margin: 5mm 0 2mm; line-height: 1.3; }
+p { margin-bottom: 3mm; }
+.lead { color: #627268; font-size: 11pt; margin: 4mm 0 5mm; line-height: 1.55; }
+.small { font-size: 9pt; color: #68796e; }
+.muted { color: #68796e; }
+.pill { display: inline-block; background: #edf3ef; color: #315f4c; padding: 1.5mm 3mm; border-radius: 3mm; font-size: 8pt; font-weight: bold; margin-right: 1.5mm; }
+.callout { background: #edf4f0; border-left: 3px solid #194e43; padding: 3mm 4mm; margin: 4mm 0; }
+.callout.warm { background: #fff7dd; border-color: #e0ab22; }
+.callout p:last-child { margin-bottom: 0; }
+.flow { display: flex; gap: 2mm; align-items: stretch; margin: 5mm 0; }
+.flow .node { flex: 1; text-align: center; background: #edf4f0; border: 1px solid #d8e4dc; padding: 3mm 1.5mm; border-radius: 2mm; font-size: 9pt; }
+.flow .arrow { align-self: center; font-size: 15pt; color: #a9b9af; }
+.node strong { display: block; color: #194e43; margin-bottom: 1mm; }
+table { width: 100%; border-collapse: collapse; margin: 3mm 0; font-size: 9pt; table-layout: fixed; }
+th { background: #194e43; color: white; text-align: left; font-weight: 700; padding: 2.8mm 3mm; line-height: 1.35; }
+td { padding: 2.7mm 3mm; border-bottom: 1px solid #e2e9e4; vertical-align: top; overflow-wrap: anywhere; }
+tr:nth-child(even) td { background: #f7f9f7; }
+.compact { font-size: 8.6pt; }
+.compact td { padding: 2.2mm 2.7mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+.card { background: #f5f8f5; border: 1px solid #e1e8e3; border-radius: 2mm; padding: 3.5mm 4mm; }
+.card h3 { margin-top: 0; }
+ul, ol { margin: 2mm 0 3mm; padding-left: 5mm; }
+li { margin: 0 0 1.8mm; padding-left: .5mm; }
+.tight li { margin-bottom: 1.1mm; }
+.check { display: inline-block; width: 2.7mm; height: 2.7mm; border: 1px solid #83968a; margin-right: 2mm; vertical-align: -.3mm; background: white; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding-left: 0; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 8.3pt; overflow-wrap: anywhere; }
+.code { background: #f2f5f2; padding: 3mm 4mm; border-radius: 2mm; margin: 2mm 0 4mm; font-family: Consolas, "Courier New", monospace; font-size: 8.6pt; white-space: pre-wrap; line-height: 1.65; }
+.role { display: flex; align-items: center; gap: 4mm; margin-bottom: 5mm; }
+.role-no { display: grid; place-items: center; background: #ffbf00; color: #194e43; border-radius: 50%; width: 13mm; height: 13mm; font-size: 19pt; font-weight: bold; flex-shrink: 0; }
+.role h2 { margin: 0; font-size: 22pt; }
+.role p { margin: 1mm 0 0; color: #68796e; font-size: 9.5pt; }
+.fill { border-bottom: 1px dotted #889b8d; display: inline-block; min-width: 45mm; height: 5mm; vertical-align: bottom; }
+.cover-title { margin: 8mm 0 4mm; }
+.cover-accent { width: 24mm; height: 2mm; background: #ffbf00; margin: 6mm 0; }
+.cover-subtitle { color: #63746a; font-size: 14pt; line-height: 1.5; }
+.section-label { margin-top: 6mm; text-transform: uppercase; letter-spacing: .08em; font-size: 8pt; color: #6c8073; font-weight: bold; }
+.status { font-size: 8pt; color: #42624e; font-weight: bold; }
+.dense { font-size: 9.8pt; line-height: 1.42; }
+.dense h3 { margin-top: 4mm; }
+.dense p { margin-bottom: 2.4mm; }
+.dense .compact td { padding-top: 1.9mm; padding-bottom: 1.9mm; }
+.dense .callout { margin: 3mm 0; }
+.dense .lead { margin-top: 3mm; margin-bottom: 4mm; }
+.dense .code { padding-top: 2.4mm; padding-bottom: 2.4mm; }
+#runbook .running { margin-bottom: 4mm; }
+#runbook h3 { margin-top: 3mm; margin-bottom: 1.6mm; }
+#runbook .compact td { padding-top: 1.5mm; padding-bottom: 1.5mm; }
+@media print { html, body { background: #fff; } .page { margin: 0; } }
+</style>
+</head>
+<body>
+
+<section class="page" id="tong-quan">
+  <div class="running"><span class="brand">CloudKicks / Cloud Shop</span><span>KẾ HOẠCH PHỐI HỢP · NHÓM 4 NGƯỜI</span></div>
+  <main>
+    <div class="kicker">Phiên bản 1.0 · Ngày cập nhật 02/11/2026</div>
+    <h1 class="cover-title">PHÂN CÔNG<br>PHÁT TRIỂN &amp;<br>TRIỂN KHAI DEMO</h1>
+    <div class="cover-accent"></div>
+    <p class="cover-subtitle">Website bán giày CloudKicks<br>Next.js + NestJS + Convex</p>
+    <p class="lead">Bản phân công mới sau khi chuyển nghiệp vụ database về backend, tiếp tục dùng NestJS và thay Clerk bằng đăng nhập email/mật khẩu.</p>
+    <div><span class="pill">Giữ nhóm 4 người</span><span class="pill">Hoàn thiện từ code hiện có</span><span class="pill">Ưu tiên luồng COD</span></div>
+    <h3>Phân chia trách nhiệm chính</h3>
+    <table>
+      <colgroup><col style="width:17%"><col style="width:39%"><col style="width:44%"></colgroup>
+      <thead><tr><th>Thành viên</th><th>Phụ trách chính</th><th>Kết quả trọng tâm</th></tr></thead>
+      <tbody>
+        <tr><td><b>Người 1</b></td><td>Storefront, UI tài khoản và admin sản phẩm</td><td>Giao diện nhất quán; chọn giày/size và quản lý sản phẩm qua API.</td></tr>
+        <tr><td><b>Người 2</b></td><td>NestJS API, Convex và xác thực</td><td>API đúng hợp đồng; kiểm tra quyền, giá, tồn kho và giao dịch.</td></tr>
+        <tr><td><b>Người 3</b></td><td>Giỏ hàng, checkout, đơn hàng và admin đơn</td><td>Luồng mua COD, theo dõi/hủy đơn và cập nhật trạng thái đầy đủ.</td></tr>
+        <tr><td><b>Người 4</b></td><td>Tích hợp, Cloud deploy và kiểm thử bản deploy</td><td>Frontend–NestJS–Convex chạy liên thông; có bản demo và bằng chứng kiểm thử.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warm"><b>Trạng thái tài liệu:</b> đề xuất để nhóm xác nhận. Tên thật, hạn bàn giao và URL triển khai được để trống; nhóm điền trước khi tạo issue. Mỗi người viết phần báo cáo của mình, Người 4 chỉ tổng hợp.</div>
+    <p class="small">Căn cứ: file phân công cũ <code>phancong.pdf</code>, yêu cầu điều chỉnh và mã nguồn hiện tại. Tài liệu này không xác nhận giảng viên hoặc cả nhóm đã nghiệm thu.</p>
+  </main>
+  <div class="footer"><span>CloudKicks · Phân công mới</span><span>01 / 10</span></div>
+</section>
+
+<section class="page" id="kien-truc">
+  <div class="running"><span class="brand">CloudKicks</span><span>01 · KIẾN TRÚC &amp; PHẠM VI</span></div>
+  <main>
+    <h2>Thống nhất nền tảng trước khi chia việc</h2>
+    <div class="flow"><div class="node"><strong>Trình duyệt</strong>Giao diện Next.js</div><span class="arrow">→</span><div class="node"><strong>Next.js /api</strong>Proxy cùng origin</div><span class="arrow">→</span><div class="node"><strong>NestJS</strong>REST API, xác thực</div><span class="arrow">→</span><div class="node"><strong>Convex</strong>Dữ liệu, transaction</div></div>
+    <ul class="tight">
+      <li><b>Frontend:</b> <code>frontend/</code>. Không dùng Clerk hoặc Convex React trực tiếp.</li>
+      <li><b>Backend:</b> <code>backend/src/</code>. Convex duy nhất ở <code>backend/convex/</code>.</li>
+      <li><b>Tài khoản:</b> email/mật khẩu; scrypt; JWT RS256 trong cookie HttpOnly; customer/admin. Đăng xuất thu hồi token cũ bằng phiên bản phiên đăng nhập.</li>
+      <li><b>Cập nhật dữ liệu:</b> tải qua REST, làm mới sau thao tác; không mặc định có realtime từ Convex ở trình duyệt.</li>
+    </ul>
+    <h3>Bảy bảng cần cùng hiểu</h3>
+    <table class="compact"><colgroup><col style="width:28%"><col style="width:72%"></colgroup>
+      <thead><tr><th>Bảng</th><th>Vai trò trong nghiệp vụ</th></tr></thead><tbody>
+      <tr><td><code>users</code></td><td>Tài khoản, định danh JWT, mật khẩu băm, vai trò và phiên bản phiên.</td></tr>
+      <tr><td><code>categories</code></td><td>Danh mục giày, tên và slug.</td></tr>
+      <tr><td><code>products</code></td><td>Mẫu giày: tên, thương hiệu, mô tả, danh mục và trạng thái hiển thị.</td></tr>
+      <tr><td><code>productVariants</code></td><td>Màu/kiểu, ảnh, giá VND, tồn kho từng size và số đã bán.</td></tr>
+      <tr><td><code>cartItems</code></td><td>Giỏ theo chủ tài khoản, biến thể, size và số lượng.</td></tr>
+      <tr><td><code>orders</code></td><td>Chủ đơn, giao hàng, tổng tiền, trạng thái đơn và thanh toán COD.</td></tr>
+      <tr><td><code>orderItems</code></td><td>Chi tiết đơn; lưu tên/giá/số lượng tại thời điểm mua.</td></tr>
+      </tbody></table>
+    <div class="two">
+      <div><h3>Đã có nền tảng trong code</h3><ul class="tight"><li>UI CloudKicks, tìm/lọc/sắp xếp và chọn biến thể/size.</li><li>Đăng ký/đăng nhập/đăng xuất; giỏ theo tài khoản.</li><li>Checkout COD, hủy pending hoàn kho; admin sản phẩm và đơn.</li><li>Seed 4 mẫu giày, 7 biến thể; các nhóm tests đã có.</li></ul></div>
+      <div><h3>Cần nhóm tiếp tục nghiệm thu</h3><ul class="tight"><li>Đồng bộ cùng commit và chạy trên máy của cả 4 người.</li><li>Review hợp đồng API, quyền truy cập và dữ liệu demo.</li><li>Tích hợp, triển khai và kiểm thử production.</li><li>Hoàn thiện báo cáo, ảnh minh chứng và diễn tập demo.</li></ul></div>
+    </div>
+    <div class="callout warm"><b>Không đưa vào phần bắt buộc:</b> thanh toán QR/online, upload ảnh, mã giảm giá, đánh giá và phân trang. Chỉ mở rộng khi MVP được nghiệm thu và nhóm/giảng viên thống nhất. Ảnh HTTPS hiện có đủ cho luồng demo cơ bản.</div>
+  </main>
+  <div class="footer"><span>Phạm vi chung · Không làm lại những phần đã có</span><span>02 / 10</span></div>
+</section>
+
+<section class="page" id="nguoi-1">
+  <div class="running"><span class="brand">CloudKicks</span><span>02 · PHÂN CÔNG CHI TIẾT</span></div>
+  <main>
+    <div class="role"><span class="role-no">1</span><div><h2>Frontend sản phẩm &amp; giao diện</h2><p>Họ tên: <span class="fill"></span> &nbsp; Hạn bàn giao: <span class="fill" style="min-width:25mm"></span></p></div></div>
+    <div class="callout"><b>Mục tiêu:</b> hoàn thiện trải nghiệm xem/chọn giày, UI đăng nhập/đăng ký và admin sản phẩm. Tận dụng giao diện đã có, không dựng lại toàn bộ từ đầu.</div>
+    <h3>Công việc phụ trách</h3>
+    <ol class="tight">
+      <li>Review trang chủ: navbar, hero, sản phẩm phổ biến, bộ sưu tập, banner và footer.</li>
+      <li>Hoàn thiện danh sách giày: card, giá VND, tìm kiếm, lọc danh mục/thương hiệu/giá và sắp xếp.</li>
+      <li>Hoàn thiện chi tiết: đổi màu/kiểu cập nhật đúng ảnh/giá/kho; chọn size, số lượng; khóa size hết hàng.</li>
+      <li>Phụ trách <b>giao diện</b> đăng nhập/đăng ký, menu tài khoản, lỗi form và trạng thái đang xử lý. Người 2 phụ trách xác thực/API.</li>
+      <li>Phụ trách <b>UI admin sản phẩm</b>: tạo/sửa/ẩn mẫu giày, biến thể, giá, tồn kho và danh mục; dùng API của Người 2.</li>
+      <li>Giữ theme thống nhất; kiểm tra mobile/desktop, loading/empty/error, focus bàn phím và thao tác đóng dialog.</li>
+    </ol>
+    <h3>Phạm vi file và phối hợp</h3>
+    <p><code>frontend/components/shop.tsx</code>, <code>auth-dialog.tsx</code>, <code>store-info.tsx</code>, <code>store-icons.tsx</code>, <code>product-image.ts</code>, <code>frontend/app/globals.css</code> và tài liệu UI.</p>
+    <p class="small">Tách phần admin sản phẩm khỏi <code>account-panel.tsx</code> ở mốc tích hợp đầu tiên, cùng Người 3 chốt ranh giới component. Thư mục/route mới chỉ tạo sau khi thống nhất; không coi là phần đã có.</p>
+    <h3>Sản phẩm bàn giao</h3>
+    <ul class="tight"><li>PR có danh sách màn hình đã hoàn thiện và ảnh desktop/mobile.</li><li>Bảng các trạng thái đã kiểm tra; danh sách lỗi còn lại nếu có.</li><li>Hướng dẫn dùng giao diện admin sản phẩm và nội dung báo cáo của phần mình.</li></ul>
+    <h3>Điều kiện nghiệm thu</h3>
+    <ul class="checklist tight">
+      <li><span class="check"></span>Chọn đúng biến thể, giá và size; không tự chọn size thay người mua.</li>
+      <li><span class="check"></span>Tìm/lọc đúng; trạng thái không có kết quả và lỗi API dễ hiểu.</li>
+      <li><span class="check"></span>Admin thêm/sửa/ẩn sản phẩm qua API; khách không được hiển thị thao tác admin.</li>
+      <li><span class="check"></span>Không tràn ngang ở 320–1440px; form, menu, dialog thao tác được.</li>
+    </ul>
+    <div class="two"><div class="card"><h3>Phần báo cáo</h3><p>Thiết kế giao diện, luồng xem/chọn giày, responsive, UI tài khoản và quản lý sản phẩm; ảnh minh chứng.</p></div><div class="card"><h3>Phần demo</h3><p>Trang chủ → tìm giày → đổi biến thể → chọn size; mở admin sản phẩm bằng tài khoản admin.</p></div></div>
+  </main>
+  <div class="footer"><span>Người review chính: Người 3 · API phối hợp: Người 2</span><span>03 / 10</span></div>
+</section>
+
+<section class="page" id="nguoi-2">
+  <div class="running"><span class="brand">CloudKicks</span><span>02 · PHÂN CÔNG CHI TIẾT</span></div>
+  <main>
+    <div class="role"><span class="role-no">2</span><div><h2>NestJS API, Convex &amp; xác thực</h2><p>Họ tên: <span class="fill"></span> &nbsp; Hạn bàn giao: <span class="fill" style="min-width:25mm"></span></p></div></div>
+    <div class="callout"><b>Mục tiêu:</b> chịu trách nhiệm toàn bộ quy tắc dữ liệu và quyền truy cập ở server. API admin thuộc Người 2; UI admin sản phẩm/đơn thuộc Người 1/3.</div>
+    <h3>Công việc phụ trách</h3>
+    <ol class="tight">
+      <li>Review schema 7 bảng, index và liên kết sản phẩm–biến thể–size–giỏ–đơn. Chỉ duy trì Convex trong backend.</li>
+      <li>Hoàn thiện API NestJS cho sản phẩm, danh mục, giỏ, đặt/hủy đơn, cập nhật trạng thái và quản trị.</li>
+      <li>Review đăng ký/đăng nhập email–mật khẩu, băm scrypt, JWT/cookie HttpOnly, thu hồi phiên và lỗi hết hạn.</li>
+      <li>Kiểm tra quyền customer/admin và chủ sở hữu ngay trong Convex; không tin role, userId hoặc giá do trình duyệt gửi.</li>
+      <li>Bảo đảm checkout đọc giá từ database, kiểm tra/trừ kho và tạo đơn trong một transaction; hủy pending hoàn kho đúng một lần.</li>
+      <li>Duy trì seed nhất quán; chuẩn bị dữ liệu demo phù hợp ảnh/màu/kiểu. Nếu có dữ liệu cũ cần giữ, lập backup/migration trước khi đổi schema.</li>
+      <li>Viết tài liệu API, bổ sung tests cho nghiệp vụ thay đổi và hỗ trợ Người 4 cấu hình xác thực production.</li>
+    </ol>
+    <h3>Phạm vi file và phối hợp</h3>
+    <p><code>backend/src/auth/</code>, <code>src/shop/</code>, <code>src/convex/</code>, <code>src/http-policy.ts</code>, <code>backend/convex/</code> và <code>backend/scripts/</code>.</p>
+    <p class="small">Người 2 chủ trì logic dùng chung ở <code>frontend/lib/</code>, <code>components/providers.tsx</code> và proxy <code>app/api/[...path]/route.ts</code>; phối hợp Người 1/3, để Người 4 kiểm tra môi trường. Không sửa binding <code>_generated/</code> bằng tay.</p>
+    <h3>Sản phẩm bàn giao</h3>
+    <ul class="tight"><li>Sơ đồ dữ liệu; <code>docs/api.md</code> ghi endpoint, dữ liệu, quyền, lỗi và ví dụ JSON không chứa secret.</li><li>Tests nghiệp vụ/quyền; hướng dẫn seed, cấp admin và xử lý môi trường.</li><li>Danh sách thay đổi schema và hướng xử lý dữ liệu cũ nếu có.</li></ul>
+    <h3>Điều kiện nghiệm thu</h3>
+    <ul class="checklist tight">
+      <li><span class="check"></span>Không trả password hash/token cho frontend dưới dạng dữ liệu công khai.</li>
+      <li><span class="check"></span>Khách bị chặn API admin và đơn/giỏ của người khác.</li>
+      <li><span class="check"></span>Đặt/hủy đơn đúng giá và kho; lỗi giữa chừng không để ghi dữ liệu dở dang.</li>
+      <li><span class="check"></span>Tests, lint, build và kiểm tra kiểu Convex đạt.</li>
+    </ul>
+    <p><b>Báo cáo &amp; demo:</b> kiến trúc API, sơ đồ 7 bảng, xác thực/phân quyền, transaction; minh chứng truy cập hợp lệ/bị từ chối và dữ liệu trước–sau đặt/hủy đơn.</p>
+  </main>
+  <div class="footer"><span>Người review chính: Người 4 · Giao diện phối hợp: Người 1 và 3</span><span>04 / 10</span></div>
+</section>
+
+<section class="page dense" id="nguoi-3">
+  <div class="running"><span class="brand">CloudKicks</span><span>02 · PHÂN CÔNG CHI TIẾT</span></div>
+  <main>
+    <div class="role"><span class="role-no">3</span><div><h2>Giỏ hàng, checkout &amp; đơn hàng</h2><p>Họ tên: <span class="fill"></span> &nbsp; Hạn bàn giao: <span class="fill" style="min-width:25mm"></span></p></div></div>
+    <div class="callout"><b>Mục tiêu:</b> khách mua được hàng bằng COD, theo dõi/hủy được đơn; admin quản lý tiến trình đơn. Giao diện gọi API NestJS, không ghi trực tiếp Convex.</div>
+    <h3>Công việc phụ trách</h3>
+    <ol class="tight">
+      <li>Hoàn thiện giỏ theo tài khoản: đúng biến thể/size, đổi số lượng, xóa dòng, hiển thị tổng tiền và giỏ trống.</li>
+      <li>Hoàn thiện form checkout: họ tên, số điện thoại, địa chỉ; kiểm tra dữ liệu và thông báo lỗi theo phản hồi server.</li>
+      <li>Hiển thị xử lý/thành công/thất bại; hạn chế gửi lặp thao tác trong lúc chờ API; làm mới giỏ và đơn sau thay đổi.</li>
+      <li>Hoàn thiện lịch sử và thông tin đơn: sản phẩm, size, số lượng, giá lúc mua, tổng tiền, giao hàng và trạng thái.</li>
+      <li>Cho khách hủy đơn pending; giải thích rõ trường hợp không được hủy hoặc tồn kho đã thay đổi.</li>
+      <li>Phụ trách <b>UI admin đơn hàng</b>: danh sách và chuyển pending → confirmed → shipping → delivered; hủy theo quyền cho phép.</li>
+      <li>Phối hợp Người 1 ở thao tác thêm giỏ; phối hợp Người 2 khi thay đổi dữ liệu, quyền hoặc nghiệp vụ; hỗ trợ Người 4 chạy kịch bản tích hợp.</li>
+    </ol>
+    <h3>Phạm vi file và phối hợp</h3>
+    <p><code>frontend/components/account-panel.tsx</code> và các component giỏ/checkout/đơn được tách sau khi chốt. Dùng <code>frontend/lib/shop-client.ts</code>, <code>shop-api.ts</code>, <code>types.ts</code> theo hợp đồng của Người 2.</p>
+    <p class="small">Người 3 chủ trì tách cart/checkout/orders/admin orders; Người 1 nhận phần admin sản phẩm. Hai người thống nhất props/export trước khi sửa chung file lớn.</p>
+    <h3>Sản phẩm bàn giao</h3>
+    <ul class="tight"><li>Luồng mua COD hoàn chỉnh qua API; ảnh/video hoặc biên bản chạy thử.</li><li>Bảng test giỏ, checkout, lỗi tồn kho, lịch sử/hủy đơn và admin đơn.</li><li>Nội dung báo cáo và kịch bản demo phần giỏ/đơn của mình.</li></ul>
+    <h3>Điều kiện nghiệm thu</h3>
+    <ul class="checklist tight">
+      <li><span class="check"></span>Giỏ đúng tài khoản; không hiển thị dữ liệu người trước sau đăng xuất/đổi tài khoản.</li>
+      <li><span class="check"></span>Đổi/xóa số lượng hoạt động; không cho mua vượt tồn kho.</li>
+      <li><span class="check"></span>Checkout thành công tạo đơn đúng, làm trống giỏ; thất bại báo lỗi rõ ràng.</li>
+      <li><span class="check"></span>Khách chỉ hủy đơn hợp lệ; admin chỉ chuyển trạng thái theo thứ tự.</li>
+    </ul>
+    <div class="two"><div class="card"><h3>Phần báo cáo</h3><p>Luồng mua hàng, form/validation, quản lý trạng thái UI, lịch sử đơn và tích hợp API.</p></div><div class="card"><h3>Phần demo</h3><p>Thêm giỏ → thay số lượng → đặt COD → xem đơn → hủy pending; minh họa admin xử lý đơn khác.</p></div></div>
+  </main>
+  <div class="footer"><span>Người review chính: Người 1 · Nghiệp vụ phối hợp: Người 2</span><span>05 / 10</span></div>
+</section>
+
+<section class="page" id="nguoi-4">
+  <div class="running"><span class="brand">CloudKicks</span><span>02 · PHÂN CÔNG CHI TIẾT</span></div>
+  <main>
+    <div class="role"><span class="role-no">4</span><div><h2>Tích hợp, Cloud deploy &amp; kiểm thử</h2><p>Họ tên: <span class="fill"></span> &nbsp; Hạn bàn giao: <span class="fill" style="min-width:25mm"></span></p></div></div>
+    <div class="callout"><b>Mục tiêu:</b> cả 4 thành viên chạy được cùng phiên bản và bản deploy hoạt động đầy đủ. Không chỉ triển khai giao diện; cần kiểm tra cả API NestJS và Convex.</div>
+    <h3>Công việc phụ trách</h3>
+    <ol class="tight">
+      <li>Quản lý tích hợp GitHub, nhánh/PR và phiên bản dùng để demo; kiểm tra không đưa file môi trường hoặc khóa vào commit.</li>
+      <li>Thiết lập CI kiểm tra cả frontend và backend: tests, lint, build; bổ sung HTTP e2e backend.</li>
+      <li>Chốt phương án triển khai frontend trên Vercel, triển khai NestJS và deployment Convex production phù hợp điều kiện nhóm.</li>
+      <li>Cấu hình URL Nest ở frontend, origin frontend ở Nest, URL/deployment Convex và bộ khóa JWT/secret production cùng Người 2.</li>
+      <li>Kiểm tra HTTPS, cookie, đăng nhập/đăng xuất, quyền admin/customer và các request đi hết frontend → Nest → Convex.</li>
+      <li>Điều phối kiểm thử bản deploy trên mobile/desktop và hai tài khoản; ghi lỗi, người sửa, kết quả kiểm tra lại.</li>
+      <li>Tạo checklist triển khai/khôi phục, ghi lại lệnh và cấu hình theo tên biến; không đưa giá trị secret vào báo cáo.</li>
+      <li>Tổng hợp tài liệu từ 3 người còn lại, chuẩn hóa báo cáo/slide và tổ chức diễn tập.</li>
+    </ol>
+    <h3>Phạm vi file và phối hợp</h3>
+    <p>Cấu hình CI/deploy, <code>README.md</code>, <code>frontend/.env.example</code>, <code>backend/env.example</code>, tài liệu vận hành và bằng chứng kiểm thử. Phối hợp Người 2 khi thay đổi proxy, cookie, khóa hoặc deployment.</p>
+    <h3>Sản phẩm bàn giao</h3>
+    <ul class="tight"><li>URL frontend/Nest, định danh Convex deployment và commit dùng demo.</li><li>Hướng dẫn một thành viên khác có thể chạy/deploy lại; danh sách tên biến môi trường.</li><li>Biên bản kiểm thử trên bản deploy, checklist rollback và báo cáo/slide đã tổng hợp.</li></ul>
+    <h3>Điều kiện nghiệm thu</h3>
+    <ul class="checklist tight">
+      <li><span class="check"></span>Cả ba tầng chạy liên thông; lỗi API không bị nhầm là lỗi giao diện.</li>
+      <li><span class="check"></span>Tài khoản customer/admin và luồng COD hoạt động trên bản deploy.</li>
+      <li><span class="check"></span>Không dùng chung private key/secret giữa dev và production theo mặc định.</li>
+      <li><span class="check"></span>Có log kết quả kiểm thử, commit, tài liệu và phương án quay lại bản ổn định.</li>
+    </ul>
+    <p><b>Báo cáo &amp; demo:</b> quy trình GitHub → build/deploy, sơ đồ Cloud, cấu hình theo tên biến, URL bản chạy và bằng chứng request đi qua Nest đến Convex. Không trình chiếu secret.</p>
+  </main>
+  <div class="footer"><span>Người review chính: Người 2 · Cả nhóm cùng kiểm thử bản deploy</span><span>06 / 10</span></div>
+</section>
+
+<section class="page dense" id="moc-tich-hop">
+  <div class="running"><span class="brand">CloudKicks</span><span>03 · PHỐI HỢP &amp; MỐC BÀN GIAO</span></div>
+  <main>
+    <h2>Làm theo mốc, có người nghiệm thu</h2>
+    <p class="lead">Nhóm điền ngày thực tế theo deadline môn học. Các mốc là thứ tự phụ thuộc, không phải số ngày đã được cam kết.</p>
+    <table class="compact"><colgroup><col style="width:12%"><col style="width:39%"><col style="width:31%"><col style="width:18%"></colgroup>
+      <thead><tr><th>Mốc</th><th>Công việc / điều kiện hoàn thành</th><th>Chủ trì / kiểm tra</th><th>Hạn nhóm điền</th></tr></thead><tbody>
+      <tr><td><b>M0</b><br>Bàn giao</td><td>Cùng commit; cả 4 máy chạy frontend, Nest và Convex; kiểm kê phần đã có và lỗi còn lại.</td><td>Người 4 tích hợp; Người 2 kiểm tra môi trường; cả nhóm xác nhận.</td><td>……/……</td></tr>
+      <tr><td><b>M1</b><br>Chốt hợp đồng</td><td>Chốt schema, API, quyền và cấu trúc UI; tách ranh giới admin sản phẩm/đơn và file dùng chung.</td><td>Người 2 chốt API; Người 1/3 chốt UI; Người 4 ghi phiên bản.</td><td>……/……</td></tr>
+      <tr><td><b>M2</b><br>Tích hợp local</td><td>Có luồng đăng ký → chọn giày/size → giỏ → COD → đơn/hủy; admin quản lý được dữ liệu.</td><td>Người 1/3 chạy UI; Người 2 sửa nghiệp vụ; Người 4 ghi kết quả.</td><td>……/……</td></tr>
+      <tr><td><b>M3</b><br>Cloud</td><td>Deploy ba tầng; cấu hình khóa/origin/URL đúng môi trường; kiểm thử lại trên URL thật.</td><td>Người 4 chủ trì; Người 2 hỗ trợ xác thực/database; Người 1/3 kiểm thử.</td><td>……/……</td></tr>
+      <tr><td><b>M4</b><br>Nghiệm thu</td><td>Checklist trang 8 đạt; chốt dữ liệu demo, báo cáo/slide, commit và diễn tập toàn nhóm.</td><td>Mỗi người bàn giao phần mình; Người 4 tổng hợp; cả nhóm duyệt.</td><td>……/……</td></tr>
+      </tbody></table>
+    <h3>Quy tắc bàn giao và review</h3>
+    <ol class="tight">
+      <li>Mỗi issue có mã, người làm, người review, hạn, phạm vi file và điều kiện hoàn thành.</li>
+      <li>Mỗi PR có mô tả hành vi thay đổi, lệnh kiểm tra/kết quả; UI có ảnh, API có ví dụ và lỗi/quyền.</li>
+      <li>Review chéo: Người 1 ↔ Người 3; Người 2 ↔ Người 4. Thay đổi nghiệp vụ dữ liệu luôn có Người 2 kiểm tra.</li>
+      <li>Người 2 chủ trì file dùng chung về API/session; Người 1 chủ trì theme; Người 3 chủ trì cart/order UI. Không cùng sửa file lớn khi chưa chốt ranh giới.</li>
+      <li>Không tự đổi schema/endpoint/args rồi giao frontend sửa sau. Thông báo tác động, cập nhật hợp đồng và kiểm tra lại bên sử dụng.</li>
+      <li>Chỉ đánh dấu “hoàn thành” sau review và kiểm thử đúng môi trường. “Có code” không đồng nghĩa “đã nghiệm thu Cloud”.</li>
+    </ol>
+    <h3>Mẫu một đầu việc</h3>
+    <div class="card"><p><b>Mã:</b> ………… &nbsp; <b>Tên:</b> ………………………………………………………</p><p><b>Người làm:</b> ……………… &nbsp; <b>Review:</b> ……………… &nbsp; <b>Hạn:</b> ………………</p><p><b>Phụ thuộc / phạm vi:</b> …………………………………………………………………</p><p><b>Điều kiện hoàn thành / bằng chứng:</b> ………………………………………………</p><p style="margin-bottom:0"><b>PR / commit / kết quả kiểm tra:</b> ……………………………………………………</p></div>
+    <p class="small" style="margin-top:4mm">Tách route riêng, upload hoặc thanh toán bổ sung chỉ trở thành đầu việc bắt buộc khi nhóm chốt rõ phạm vi và thời gian.</p>
+  </main>
+  <div class="footer"><span>Mỗi thay đổi đều có người làm, người review và bằng chứng</span><span>07 / 10</span></div>
+</section>
+
+<section class="page dense" id="nghiem-thu">
+  <div class="running"><span class="brand">CloudKicks</span><span>04 · CHECKLIST NGHIỆM THU MVP</span></div>
+  <main>
+    <h2>Kiểm tra đúng nghiệp vụ và đúng môi trường</h2>
+    <p class="small">Dấu kiểm bên dưới do nhóm điền sau khi chạy thử. Có thể ghi kết quả local và bản deploy riêng trong biên bản; không dùng kết quả local để mặc định đánh dấu production.</p>
+    <table class="compact"><colgroup><col style="width:9%"><col style="width:65%"><col style="width:26%"></colgroup>
+      <thead><tr><th>Đạt</th><th>Ca nghiệm thu / kết quả mong đợi</th><th>Chủ trì / phối hợp</th></tr></thead><tbody>
+      <tr><td><span class="check"></span></td><td>Đăng ký email/mật khẩu, đăng nhập đúng/sai, thông báo lỗi hợp lý; không lộ mật khẩu băm.</td><td>Người 2 / 1</td></tr>
+      <tr><td><span class="check"></span></td><td>Đăng xuất và hết hạn phiên không để đọc dữ liệu riêng; token đã bị thu hồi không dùng lại được.</td><td>Người 2 / 4</td></tr>
+      <tr><td><span class="check"></span></td><td>Đổi tài khoản không hiển thị giỏ/đơn của người trước; khách bị chặn API quản trị và dữ liệu người khác.</td><td>Người 2 / 3</td></tr>
+      <tr><td><span class="check"></span></td><td>Tìm/lọc/sắp xếp đúng; chọn biến thể đổi đúng ảnh/giá/kho; size hết hàng bị khóa.</td><td>Người 1 / 3</td></tr>
+      <tr><td><span class="check"></span></td><td>Thêm giỏ, đổi số lượng và xóa dòng hoạt động; số lượng vượt kho bị từ chối.</td><td>Người 3 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Checkout COD kiểm tra thông tin giao hàng; dùng giá server, tạo đơn đúng, trừ kho và xóa giỏ.</td><td>Người 3 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Một dòng trong giỏ hết hàng: checkout thất bại và không để đơn/kho/giỏ ghi dở dang.</td><td>Người 2 / 3</td></tr>
+      <tr><td><span class="check"></span></td><td>Hai tài khoản tranh mua đôi cuối: chỉ một đơn thành công, tồn kho không âm.</td><td>Người 2 / 4</td></tr>
+      <tr><td><span class="check"></span></td><td>Hủy pending hoàn kho một lần; hủy lặp hoặc hủy đơn không hợp lệ bị chặn.</td><td>Người 3 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Admin thêm/sửa/ẩn sản phẩm và biến thể; dữ liệu lịch sử đơn giữ tên/giá lúc mua.</td><td>Người 1 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Admin chuyển đúng thứ tự trạng thái; đơn delivered được đánh dấu COD đã thanh toán.</td><td>Người 3 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Mobile/desktop không tràn ngang; menu tài khoản, dialog và form dùng được; có loading/empty/error.</td><td>Người 1 / 3</td></tr>
+      <tr><td><span class="check"></span></td><td>Bản deploy đi qua đủ frontend–Nest–Convex; HTTPS, cookie, origin và môi trường đúng.</td><td>Người 4 / 2</td></tr>
+      <tr><td><span class="check"></span></td><td>Không commit secret; README, sơ đồ, URL demo, tài khoản thử và báo cáo được bàn giao có kiểm soát.</td><td>Người 4 / cả nhóm</td></tr>
+      </tbody></table>
+    <div class="callout"><b>Nền tảng kiểm tra hiện có:</b> lần kiểm tra local gần nhất có 13 tests backend, 5 HTTP e2e và 3 tests frontend đạt; đã thử luồng COD qua Nest bằng trình duyệt. Nhóm vẫn phải tự nghiệm thu trên commit và môi trường dùng để trình bày.</div>
+    <p class="small"><b>Biên bản tối thiểu:</b> mã test · commit · môi trường/URL · dữ liệu đầu vào · kết quả mong đợi/thực tế · ảnh/log đã che secret · người chạy · ngày · người sửa/kiểm tra lại nếu thất bại.</p>
+  </main>
+  <div class="footer"><span>Không thay thế kiểm thử đồng thời thật bằng hai lượt mua tuần tự</span><span>08 / 10</span></div>
+</section>
+
+<section class="page dense" id="bao-cao-demo">
+  <div class="running"><span class="brand">CloudKicks</span><span>05 · BÁO CÁO, DEMO &amp; BẰNG CHỨNG</span></div>
+  <main>
+    <h2>Mỗi người có phần viết và phần trình bày</h2>
+    <table><colgroup><col style="width:16%"><col style="width:51%"><col style="width:33%"></colgroup>
+      <thead><tr><th>Người</th><th>Nội dung báo cáo phụ trách</th><th>Bằng chứng bàn giao</th></tr></thead><tbody>
+      <tr><td><b>1</b></td><td>Thiết kế giao diện, sản phẩm/biến thể/size, responsive, UI tài khoản và admin sản phẩm.</td><td>Ảnh desktop/mobile; luồng UI; bảng trạng thái và kết quả kiểm tra.</td></tr>
+      <tr><td><b>2</b></td><td>Kiến trúc NestJS–Convex, sơ đồ 7 bảng, hợp đồng API, băm mật khẩu/JWT, quyền và transaction.</td><td>Sơ đồ, trích đoạn mã phù hợp, tests và dữ liệu trước–sau thao tác.</td></tr>
+      <tr><td><b>3</b></td><td>Giỏ hàng, checkout COD, lịch sử/hủy đơn, admin đơn và xử lý lỗi tích hợp.</td><td>Kịch bản mua/hủy; ảnh đơn và giỏ; kết quả đối chiếu giá/kho.</td></tr>
+      <tr><td><b>4</b></td><td>Git/CI, mô hình Cloud, triển khai ba tầng, môi trường, kiểm thử bản deploy và vận hành.</td><td>URL/commit demo, log CI, hướng dẫn triển khai và biên bản kiểm thử.</td></tr>
+      </tbody></table>
+    <div class="callout warm"><b>Người 4 không viết thay cả nhóm.</b> Mỗi người bàn giao nội dung, hình, chú thích và kết quả phần mình trước hạn; Người 4 ghép bố cục và chuẩn hóa. Cả nhóm cùng duyệt bản cuối.</div>
+    <h3>Cấu trúc báo cáo chung đề xuất</h3>
+    <ol class="tight"><li>Mục tiêu, phạm vi demo và phân công thực tế.</li><li>Kiến trúc Next.js → NestJS → Convex; mô hình dữ liệu và xác thực.</li><li>Thiết kế, triển khai từng chức năng và hình minh họa.</li><li>Quy trình triển khai, cấu hình theo tên biến và URL demo.</li><li>Kiểm thử, kết quả, giới hạn hiện tại, hướng phát triển và kết luận.</li></ol>
+    <h3>Thứ tự demo xuyên suốt</h3>
+    <table class="compact"><colgroup><col style="width:13%"><col style="width:22%"><col style="width:65%"></colgroup>
+      <thead><tr><th>Bước</th><th>Trình bày</th><th>Nội dung</th></tr></thead><tbody>
+      <tr><td>1</td><td>Người 4</td><td>Mở URL bản deploy; giới thiệu sơ đồ ba tầng và commit dùng demo.</td></tr>
+      <tr><td>2</td><td>Người 2</td><td>Đăng ký/đăng nhập customer; giải thích quyền và cách tài khoản được kiểm tra.</td></tr>
+      <tr><td>3</td><td>Người 1</td><td>Tìm giày; đổi màu/kiểu; chọn size còn hàng; giới thiệu responsive.</td></tr>
+      <tr><td>4</td><td>Người 3</td><td>Thêm giỏ, đổi số lượng, đặt COD và mở đơn hàng vừa tạo.</td></tr>
+      <tr><td>5</td><td>Người 2 + 3</td><td>Đối chiếu dữ liệu/kho; hủy pending để chứng minh hoàn kho. Dùng một đơn khác để demo xử lý giao hàng.</td></tr>
+      <tr><td>6</td><td>Người 1 + 3</td><td>Đăng nhập admin: quản lý sản phẩm và tiến trình đơn; minh họa khách không có quyền admin.</td></tr>
+      <tr><td>7</td><td>Người 4</td><td>Tổng kết kiểm thử, CI/deploy, giới hạn và hướng phát triển.</td></tr>
+      </tbody></table>
+    <p class="small">Chuẩn bị trước dữ liệu, customer/admin và một đơn để hủy, một đơn để giao. Không đọc mật khẩu/secret trước lớp; thống nhất thời lượng theo yêu cầu giảng viên. Ảnh/video dự phòng phải ghi rõ là bằng chứng quay trước.</p>
+  </main>
+  <div class="footer"><span>Báo cáo phản ánh phần thực sự đã làm và đã kiểm chứng</span><span>09 / 10</span></div>
+</section>
+
+<section class="page dense" id="runbook">
+  <div class="running"><span class="brand">CloudKicks</span><span>06 · RUNBOOK &amp; XÁC NHẬN NHÓM</span></div>
+  <main>
+    <h2>Chạy cùng phiên bản, bàn giao rõ ràng</h2>
+    <h3>Chạy local sau khi đã cấu hình môi trường</h3>
+    <table class="compact"><colgroup><col style="width:19%"><col style="width:28%"><col style="width:53%"></colgroup>
+      <thead><tr><th>Terminal</th><th>Thư mục</th><th>Lệnh giữ chạy</th></tr></thead><tbody>
+      <tr><td>1</td><td><code>backend/</code></td><td><code>npm.cmd run convex:dev</code></td></tr>
+      <tr><td>2</td><td><code>backend/</code></td><td><code>npm.cmd run start:dev</code></td></tr>
+      <tr><td>3</td><td><code>frontend/</code></td><td><code>npm.cmd run dev</code></td></tr>
+      </tbody></table>
+    <p class="small">Cài dependencies bằng <code>npm.cmd ci</code> trong từng thư mục. Lần đầu ở backend chạy <code>npm.cmd run auth:setup</code>; seed chỉ chạy cho database chưa có sản phẩm. Mở <code>http://localhost:3000</code>, Nest mặc định ở port 3001. Không chạy Convex từ frontend.</p>
+    <h3>Kiểm tra trước bàn giao</h3>
+    <div class="two"><div class="code"># frontend/
+npm.cmd test
+npm.cmd run lint
+npm.cmd run build</div><div class="code"># backend/
+npm.cmd test
+npm.cmd run test:e2e
+npm.cmd run lint
+npm.cmd run build</div></div>
+    <h3>Những điểm cấu hình phải kiểm tra</h3>
+    <ul class="tight"><li>Frontend: <code>BACKEND_URL</code>. Backend: <code>CONVEX_DEPLOYMENT</code>, <code>CONVEX_URL</code>, <code>PORT</code>, <code>FRONTEND_ORIGIN</code>.</li><li>Khóa xác thực: <code>JWT_PRIVATE_KEY_BASE64</code>, <code>NEST_JWKS_BASE64</code>, <code>NEST_AUTH_SECRET</code>; Người 2/4 kiểm tra sự tương ứng, không ghi giá trị vào tài liệu.</li><li>Đăng ký tài khoản mới bằng email/mật khẩu. Cấp admin có kiểm soát bằng internal mutation <code>users:setAdmin</code> với email; tải lại trang sau khi cấp quyền.</li><li>Tài khoản Clerk/deployment frontend cũ không tự chuyển sang tài khoản mới. Không xóa dữ liệu cũ hoặc tắt schema validation để vượt lỗi đồng bộ.</li></ul>
+    <h3>Biểu mẫu chốt trước khi bắt đầu</h3>
+    <table class="compact"><colgroup><col style="width:21%"><col style="width:44%"><col style="width:35%"></colgroup>
+      <thead><tr><th>Vai trò</th><th>Họ tên xác nhận</th><th>Hạn bàn giao phần mình</th></tr></thead><tbody>
+      <tr><td>Người 1</td><td>…………………………………………</td><td>…………………………</td></tr>
+      <tr><td>Người 2</td><td>…………………………………………</td><td>…………………………</td></tr>
+      <tr><td>Người 3</td><td>…………………………………………</td><td>…………………………</td></tr>
+      <tr><td>Người 4</td><td>…………………………………………</td><td>…………………………</td></tr>
+      </tbody></table>
+    <p><b>Deadline môn học:</b> ………………… &nbsp; <b>Ngày demo:</b> …………………</p>
+    <p><b>Repository / commit:</b> …………………………………………………………………</p>
+    <p><b>URL frontend / Nest / Convex deployment:</b> …………………………………………</p>
+    <p class="small">Tham chiếu trong project: <code>README.md</code>, <code>docs/ui-guide.md</code>, <code>backend/convex/schema.ts</code>. Bản HTML đi kèm dùng để cập nhật tên, lịch và nội dung trước khi xuất PDF lại.</p>
+  </main>
+  <div class="footer"><span>Phiên bản 1.0 · 02/11/2026 · Nhóm xác nhận trước khi áp dụng</span><span>10 / 10</span></div>
+</section>
+</body>
+</html>

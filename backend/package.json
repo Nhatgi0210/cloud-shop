@@ -13,14 +13,16 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/main.js",
     "convex:dev": "convex dev",
     "lint": "oxlint src/ test/",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
-    "test:e2e": "vitest run --config ./vitest.config.e2e.ts"
+    "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
+    "auth:setup": "node scripts/setup-auth.mjs --sync",
+    "convex:seed": "convex run seed:run"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
@@ -28,10 +30,12 @@
     "@nestjs/observe": "^0.1.8",
     "@nestjs/platform-express": "^12.0.1",
     "convex": "^1.47.0",
+    "jose": "^6.2.15",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@edge-runtime/vm": "^5.0.0",
     "@nestjs/cli": "^12.0.0",
     "@nestjs/mau": "^0.2.6",
     "@nestjs/schematics": "^12.0.0",
@@ -40,6 +44,7 @@
     "@types/node": "^24.0.0",
     "@types/supertest": "^7.0.0",
     "@vitest/coverage-v8": "^4.1.2",
+    "convex-test": "^0.0.66",
     "oxlint": "^1.58.0",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",

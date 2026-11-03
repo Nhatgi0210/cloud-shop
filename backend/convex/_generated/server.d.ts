@@ -30,6 +30,8 @@ import type { DataModel } from "./dataModel.js";
 type Env = {
   readonly CONVEX_CLOUD_URL: string;
   readonly CONVEX_SITE_URL: string;
+  readonly NEST_AUTH_SECRET: string;
+  readonly NEST_JWKS_BASE64: string;
 };
 
 /**

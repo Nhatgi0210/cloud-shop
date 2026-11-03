@@ -1,55 +1,37 @@
-import { Injectable } from '@nestjs/common';
+﻿import { Injectable } from '@nestjs/common';
 import { ConvexHttpClient } from 'convex/browser';
-import { anyApi } from 'convex/server';
+import { makeFunctionReference } from 'convex/server';
 import { loadEnv } from '../config/load-env.js';
-
-export const convexApi = anyApi;
-
-type ConvexCall = (
-  reference: unknown,
-  args: Record<string, unknown>,
-) => Promise<unknown>;
 
 @Injectable()
 export class ConvexService {
-  private client: ConvexHttpClient | null = null;
-
   query<Result>(
-    reference: unknown,
+    name: string,
     args: Record<string, unknown> = {},
+    token?: string,
   ): Promise<Result> {
-    return this.call('query', reference, args);
+    return this.client(token).query(
+      makeFunctionReference<'query'>(name),
+      args,
+    ) as Promise<Result>;
   }
-
   mutation<Result>(
-    reference: unknown,
+    name: string,
     args: Record<string, unknown> = {},
+    token?: string,
   ): Promise<Result> {
-    return this.call('mutation', reference, args);
+    return this.client(token).mutation(
+      makeFunctionReference<'mutation'>(name),
+      args,
+    ) as Promise<Result>;
   }
-
-  private call<Result>(
-    kind: 'query' | 'mutation',
-    reference: unknown,
-    args: Record<string, unknown>,
-  ): Promise<Result> {
-    const client = this.getClient();
-    const run = client[kind].bind(client) as ConvexCall;
-    return run(reference, args) as Promise<Result>;
-  }
-
-  private getClient(): ConvexHttpClient {
-    if (this.client) {
-      return this.client;
-    }
+  private client(token?: string) {
     loadEnv();
-    const url = process.env.CONVEX_URL;
-    if (!url) {
-      throw new Error(
-        'CONVEX_URL is not set. From backend/, run `npm run convex:dev` and leave that terminal open.',
-      );
-    }
-    this.client = new ConvexHttpClient(url);
-    return this.client;
+    if (!process.env.CONVEX_URL)
+      throw new Error('CONVEX_URL is not configured.');
+    // Each request gets its own client so concurrent users never share auth.
+    const client = new ConvexHttpClient(process.env.CONVEX_URL);
+    if (token) client.setAuth(token);
+    return client;
   }
 }
